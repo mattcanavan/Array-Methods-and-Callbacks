@@ -68,6 +68,8 @@ function getWinners(paramCallback, dataIn) {
     paramCallback(dataIn).filter(function (item) {
         if (item['Home Team Goals'] > item['Away Team Goals']) {
             return winners.push(item['Home Team Name']);
+        } else if(item['Home Team Goals'] === item['Away Team Goals']){
+            return winners.push(item['Win conditions']);
         } else {
             return winners.push(item['Away Team Name']);
         }
